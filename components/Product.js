@@ -20,7 +20,7 @@ class Product extends React.Component {
         <TouchableWithoutFeedback onPress={() => navigation.navigate('Product', { product: product })}>
           <Block flex space="between" style={styles.productDescription}>
             <Text size={14} style={styles.productTitle}>{product.title}</Text>
-            <Text size={12} muted={!priceColor} color={priceColor}>${product.price}</Text>
+            <Text size={12} color={priceColor}>{product.add}</Text>
           </Block>
         </TouchableWithoutFeedback>
       </Block>
@@ -49,7 +49,7 @@ const styles = StyleSheet.create({
     elevation: 1,
   },
   image: {
-    borderRadius: 3,
+    borderRadius: 5,
     marginHorizontal: theme.SIZES.BASE / 2,
     marginTop: -16,
   },

@@ -23,7 +23,7 @@ export default class Home extends React.Component {
       />
     )
   }
-  
+
   renderTabs = () => {
     const { navigation } = this.props;
 
@@ -46,18 +46,20 @@ export default class Home extends React.Component {
   }
 
   renderProducts = () => {
+    const cars = [];
+    for (let i = 0; i < homeImages.length; i++){
+      cars.push(
+        <Product product={homeImages[i]} full />
+      )
+    }
+
     return (
       <ScrollView
         showsVerticalScrollIndicator={false}
         contentContainerStyle={styles.products}>
         <Block flex>
-          <Product product={homeImages[0]} horizontal />
-          <Block flex row>
-            <Product product={homeImages[1]} style={{ marginRight: theme.SIZES.BASE }} />
-            <Product product={homeImages[2]} />
-          </Block>
-          <Product product={homeImages[3]} horizontal />
-          <Product product={homeImages[4]} full />
+          {/* <Product product={homeImages[0]} full /> */}
+          {cars}
         </Block>
       </ScrollView>
     )
@@ -74,7 +76,7 @@ export default class Home extends React.Component {
 
 const styles = StyleSheet.create({
   home: {
-    width: width,    
+    width: width,
   },
   search: {
     height: 48,
