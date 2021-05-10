@@ -13,43 +13,30 @@ export default class Onboarding extends React.Component {
     const { navigation } = this.props;
 
     return (
-      <Block flex style={styles.container}>
+      <Block center flex style={styles.container}>
         <StatusBar barStyle="light-content" />
-        <Block flex center>
-          <Image
-            source={{ uri: Images.Onboarding }}
-            style={{ height: height / 1.8, width, zIndex: 1 }}
-          />
-        </Block>
-        <Block flex={1.3} space="between" style={styles.padded}>
-          <Block style={{ paddingTop: 50, position: 'relative' }}>
-            <LinearGradient
-              style={styles.gradient}
-              colors={['rgba(0,0,0,0)', 'rgba(0,0,0,1)']} />
-            <Block style={{ marginBottom: theme.SIZES.BASE / 2, paddingHorizontal: theme.SIZES.BASE * 2, zIndex: 3 }}>
-              <Block>
-                <Text color="white" size={60}>Material</Text>
-              </Block>
-              <Block row>
-                <Text color="white" size={60}>Kit</Text>
-                <Block middle style={styles.pro}>
-                  <Text size={16} color="white">PRO</Text>
+          <Image source={require('./DOP-Header-Logo.png')} style={styles.logo} />
+          <Block flex={1.3} space="between" style={styles.padded}>
+            <Block style={{ paddingTop: 50, position: 'relative' }}>
+
+              <Block style={{ marginBottom: theme.SIZES.BASE * 4, paddingHorizontal: theme.SIZES.BASE * 2, zIndex: 3 }}>
+                <Block>
+                  <Text center color="#2bb8b4" size={60}>Doors Open Pittsburgh</Text>
                 </Block>
               </Block>
+              <Block style={{ paddingHorizontal: theme.SIZES.BASE * 2,  zIndex: 3 }}>
+                <Text center size={22} color='#d45330'>
+                We love Pittsburgh buildings and the history behind them
+                </Text>
+              </Block>
             </Block>
-            <Block style={{ paddingHorizontal: theme.SIZES.BASE * 2,  zIndex: 3 }}>
-              <Text size={16} color='rgba(255,255,255,0.6)'>
-                Fully coded React Native components.
-              </Text>
-            </Block>
-          </Block>
-          <Block center style={{ paddingBottom: 30 }}>
-            <Button
-              shadowless
-              style={styles.button}
-              color={materialTheme.COLORS.BUTTON_COLOR}
-              onPress={() => navigation.navigate('App')}>
-              GET STARTED
+            <Block center style={{ paddingBottom: 30 }}>
+              <Button
+                shadowless
+                style={styles.button}
+                color="#2bb8b4"
+                onPress={() => navigation.navigate('App')}>
+                START
             </Button>
           </Block>
         </Block>
@@ -59,8 +46,11 @@ export default class Onboarding extends React.Component {
 }
 
 const styles = StyleSheet.create({
+  logo: {
+    marginTop: 150
+  },
   container: {
-    backgroundColor: "black",
+    backgroundColor: "white",
   },
   padded: {
     // paddingHorizontal: theme.SIZES.BASE * 2,

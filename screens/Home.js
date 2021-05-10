@@ -49,7 +49,7 @@ export default class Home extends React.Component {
     const cars = [];
     for (let i = 0; i < homeImages.length; i++){
       cars.push(
-        <Product product={homeImages[i]} full />
+        <Product key={i} product={homeImages[i]} full />
       )
     }
 
