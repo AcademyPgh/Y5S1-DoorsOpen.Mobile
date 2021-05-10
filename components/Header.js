@@ -44,7 +44,7 @@ class Header extends React.Component {
   renderBanner = () => {
     const { navigation } = this.props;
     return (
-      <Text center size={50}>Open Doors Pittsburgh</Text>
+      <Text center size={50}>Doors Open Pittsburgh</Text>
     )
   }
 
@@ -92,7 +92,7 @@ class Header extends React.Component {
           right={this.renderRight()}
           rightStyle={{ alignItems: 'center' }}
           leftStyle={{ paddingTop: 3, flex: 0.3 }}
-          leftIconName={back ? null : "navicon"}
+          leftIconName={null}
           // leftIconFamily="font-awesome"
           leftIconColor={white ? theme.COLORS.WHITE : theme.COLORS.ICON}
           titleStyle={[

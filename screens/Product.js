@@ -11,10 +11,12 @@ import {
 } from 'react-native';
 // import Animated from 'react-native-reanimated';
 import { Block, Text, Button, theme } from 'galio-framework';
-import { Icon } from '../components';
+import Icon from 'react-native-vector-icons/FontAwesome5';
+import Iconfeather from 'react-native-vector-icons/Feather';
 import materialTheme from '../constants/Theme';
 import Images from "../constants/Images";
 import { iPhoneX, HeaderHeight } from "../constants/utils";
+
 const { height, width } = Dimensions.get('window');
 
 export default class Product extends React.Component {
@@ -108,7 +110,18 @@ export default class Product extends React.Component {
       </Block>
     )
   }
-
+  getBathroomIcon(canPee) {
+    if (canPee){
+      return (
+        <Text size={14}><Icon name={"toilet-paper"} size={30} color="#f0f" /> Restrooms Available</Text>
+      )
+    }
+    else {
+      return (
+        <Text size={14}><Icon name={"toilet-paper-slash"} size={30} color="#f0f" /> Restrooms Not Available</Text>
+      )
+    }
+  }
   render() {
     const { selectedSize } = this.state;
     const { navigation, route } = this.props;
@@ -138,9 +151,12 @@ export default class Product extends React.Component {
                   <Text size={14}>{product.capacity}</Text>
                 </Block>
                 <Block>
-                  <Text size={14}>{product.restroom}</Text>
-                  <Text size={14}>{product.restroomAccess}</Text>
-                  <Text size={14} style={{ paddingBottom: 20 }}>{product.wheelAccess}</Text>
+
+                  {this.getBathroomIcon(product.restroom)}
+
+                  <Text size={14}><Icon name="wheelchair" size={30} color="#f0f" />{product.restroomAccess}</Text>
+                  <Text size={14}><Icon name="wheelchair" size={30} color="#f0f" /> {product.wheelAccess}</Text>
+                  <Text size={14} style={{ paddingBottom: 20 }}><Iconfeather name="camera-off" size={30} color="#f0f" /> {product.photo}</Text>
                 </Block>
                 <Block style={{backgroundColor: "lightgrey"}}>
                   <Text center>History</Text>
