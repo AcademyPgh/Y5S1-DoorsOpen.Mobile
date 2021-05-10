@@ -1,12 +1,18 @@
 const home = [
-  // {
-  //   title: 'Look at this little business man!!!',
-  //   stuff: 'behold, some stuff',
-  //   // image: 'https://source.unsplash.com/dS2hi__ZZMk/840x840',
-  //   image: 'https://www.petage.com/wp-content/uploads/2019/06/Anthropomorphic-Cat-1024x636.jpg',
-  //   price: 180,
-  //   horizontal: true,
-  // },
+  {
+    title: 'Bost Building National Historic Landmark',
+    add: '623 East 8th Avenue, Homestead',
+    start: '10am',
+    close: '4pm',
+    capacity: 20,
+    restroom: 'Restrooms are Available',
+    restroomAccess: 'Restrooms are  Wheelchair Accessible',
+    wheelAccess: 'Grounds are Wheelchair Accessible',
+    history: "One of the most frequently asked questions is how to pronounce the name of the building it is Bost (boa-st), sounds like ghost. Over the years, this storied building has served many functions. It was a hotel, bar, gambling hall, brothel, and even a sandwich shop. Built in 1892 as a hotel for the rapidly growing worker's ward of Homestead, the Bost Building was at the center of American labor history's most dramatic episodes--the Homestead Lockout and Strike. During the summer of 1892, the Bost Building served as headquarters for the Amalgamated Association of Iron and Steel Workers. Using the third floor of the building as a watchtower, steel union officials monitored activities in the mill. The building received a National Historic Landmark designation in 1999 and underwent a $4-million renovation. It is now Rivers of Steel's gift shop and museum.",
+    visitorExperience: "Visitors can explore the museum on site including period rooms, containing exhibitions and hundreds of artifacts that preserve the story of 'big steel' in Southwestern Pennsylvania and the cultures of its workforce.  The first floor includes the main gift shop and Homestead Room, the third floor houses the Bost Building Gallery showcasing exhibitions from the Rivers of Steel archives.",
+    image: 'https://upload.wikimedia.org/wikipedia/commons/5/59/Bost_Building.jpg',
+    horizontal: true,
+  },
   {
     title: 'Carnegie of Homestead',
     add: '510 East 10th Avenue',
@@ -16,63 +22,25 @@ const home = [
     restroom: 'Restrooms are Available',
     restroomAccess: 'Restrooms are Not Wheelchair Accessible',
     wheelAccess: 'Grounds are Wheelchair Accessible',
-    history: 'Built in 1904, it is haunted by freemasons',
-    visitorExperience: "Don't touch Charles",
-    // image: 'https://source.unsplash.com/dS2hi__ZZMk/840x840',
+    history: "In 2014, CNN selected the Carnegie of Homestead as one of the 27 most beautiful libraries in the world to visit. Built in 1898 by Andrew Carnegie, the historic atmosphere is home to a public library, a 1,000-seat music hall, and a full-service athletic club. The French Renaissance design was the work of Pittsburgh architects Frank Alden and Alfred Harlow. The beautifully restored library has served families for over 120 years, including immigrants from the early 1900's to present day families. The 1,000-seat grand music hall maintains much of its original charm, with a few modern upgrades. Both lobbies are lined with marble & the seats are original from the 1800's. Years ago the Athletic Club served the steel-town residents as a training facility for gymnasts, wrestlers, swimmers, soccer and football. Swimmers from the 1932and 1936 Olympics trained in our historic indoor swimming pool.",
+    visitorExperience: "Visitors start their exploration in the grand music hall, preserved in time from 120 years ago. Stand on the very stage Andrew Carnegie, Jeff Goldblum, Boz Scaggs and others entertained audiences from near and far. The hall will lead you to the library's magnificent reading room, beautifully restored with a grand fireplace, antique seating to curl up and read a good book. Tour the children's/teen space murals and the state-of-the-art STEM lab. In the lower level, see the oldest indoor swimming pool in Western Pennsylvania. Explore other amenities: indoor baseball training facility, indoor basketball court with running track, coffee shop, exercise spaces and weight rooms.",
     image: 'https://www.pahauntedhouses.com/real-haunt-photo/m/carnegie-library-homestead_2539.jpg',
     horizontal: true,
   },
   {
-    title: 'Carnegie of Homestead',
-    add: '510 East 10th Avenue',
+    title: 'Carpatho-Rusyn Society',
+    add: '915 Dickson Street, Homestead',
     start: '10am',
     close: '4pm',
-    capacity: 300,
+    capacity: 150,
     restroom: 'Restrooms are Available',
-    restroomAccess: 'Restrooms are Not Wheelchair Accessible',
+    restroomAccess: 'Restrooms are Wheelchair Accessible',
     wheelAccess: 'Grounds are Wheelchair Accessible',
-    history: 'Built in 1904, it is haunted by freemasons',
-    visitorExperience: "Don't touch Charles",
-    // image: 'https://source.unsplash.com/dS2hi__ZZMk/840x840',
-    image: '',
+    history: "The former St. John the Baptist Byzantine Catholic Cathedral was designed by 27-year old Hungarian-born architect Titus DeBobula. He was eager to develop a unique American architecture and felt that this building well suited an America full of Eastern European immigrants. It is that rarity in American architecture, a building of peculiarly central European variety. This Romanesque Revival Church is constructed of brick on a raised stone basement. The facade and twin towers are composed of white brick in a Greek cruciform pattern set into sandstone and rise 125 feet. At each corner, the twin towers have Roman style arched windows with Gibbs-surround flanking a similar doorway, echoed on the side elevation. Above in the tower are elongated windows and round crosses. The central recessed bay hs four columns and above is a similar but open balcony echoing that on the first level. After the parish relocated, the Carpatho-Rusyn Society purchased the building.",
+    visitorExperience: "Visitors will have the opportunity to enjoy craft demonstrations of egg decorating and embroidery. Customs and traditions, some familiar and some unexpected, will be presented as well. Experience the warmth of Rusyn hospitality, will learn a brief history of our Rusyn immigrants and how they have enriched American culture.",
+    image: 'https://c-rs.org/resources/Pictures/Cultural%20Center/32418.110277%20(1).jpg',
     horizontal: true,
-  }
-];
-
-const deals = [
-  {
-    title: 'Hardly Anything Takes More Coura...',
-    // image: 'https://source.unsplash.com/dS2hi__ZZMk/840x840',
-    image: 'https://images.unsplash.com/photo-1539314171919-908b0cd96f03?crop=entropy&w=840&h=840&fit=crop',
-    price: 180,
-    horizontal: true,
-  },
-  {
-    title: 'Find the cheapest deals on our range...',
-    // image: 'https://source.unsplash.com/tb6ulgGY5Zc/840x840',
-    image: 'https://images.unsplash.com/photo-1515709980177-7a7d628c09ba?crop=entropy&w=840&h=840&fit=crop',
-    price: 220,
-  },
-  {
-    title: "Looking for Men's watches?",
-    // image: 'https://source.unsplash.com/YHbcum51JB0/840x840',
-    image: 'https://images.unsplash.com/photo-1490367532201-b9bc1dc483f6?crop=entropy&w=840&h=840&fit=crop',
-    price: 40,
-  },
-  {
-    title: 'Curious Blossom Skin Care Kit.',
-    // image: 'https://source.unsplash.com/I7BSOoPa5hM/840x840',
-    image: 'https://images.unsplash.com/photo-1536303006682-2ee36ba49592?crop=entropy&w=840&h=840&fit=crop',
-    price: 188,
-    horizontal: true,
-  },
-  {
-    title: 'Adjust your watch to your outfit.',
-    // image: 'https://source.unsplash.com/Ws4wd-vJ9M0/840x840',
-    image: 'https://images.unsplash.com/photo-1491336477066-31156b5e4f35?crop=entropy&w=840&h=840&fit=crop',
-    price: 180,
   },
 ];
-
 
 export default home;

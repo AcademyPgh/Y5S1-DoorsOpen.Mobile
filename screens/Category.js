@@ -15,7 +15,7 @@ export default class Category extends React.Component {
     // const { params } = navigation && navigation.state;
     const category = categories[route.params?.id];
     const suggestions = category && category.suggestions;
-    
+
     if (!suggestions) return null;
 
     return (

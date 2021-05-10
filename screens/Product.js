@@ -128,18 +128,31 @@ export default class Product extends React.Component {
             <ScrollView vertical={true} showsVerticalScrollIndicator={false}>
               <Block style={{ paddingHorizontal: theme.SIZES.BASE, paddingTop: theme.SIZES.BASE * 2 }}>
                 <Text size={28} style={{ paddingBottom: 14 }}>{product.title}</Text>
-                <Text size={20}>{product.add}</Text>
+                <Text size={20} style={{ paddingBottom: 7 }}>{product.add}</Text>
                 <Block row>
-                  <Text size={14} bold>{product.start}</Text>
+                  <Text size={14} bold>{product.start} - </Text>
                   <Text size={14} bold>{product.close}</Text>
                 </Block>
+                <Block row>
+                  <Text size={14} bold>Capacity: </Text>
+                  <Text size={14}>{product.capacity}</Text>
+                </Block>
                 <Block>
-                  <Text size={14} bold>{product.capacity}</Text>
-                  <Text size={14} bold>{product.restroom}</Text>
-                  <Text size={14} bold>{product.restroomAccess}</Text>
-                  <Text size={14} bold>{product.wheelAccess}</Text>
-                  <Text size={14} bold>{product.history}</Text>
-                  <Text size={14} bold>{product.visitorExperience}</Text>
+                  <Text size={14}>{product.restroom}</Text>
+                  <Text size={14}>{product.restroomAccess}</Text>
+                  <Text size={14} style={{ paddingBottom: 20 }}>{product.wheelAccess}</Text>
+                </Block>
+                <Block style={{backgroundColor: "lightgrey"}}>
+                  <Text center>History</Text>
+                </Block>
+                <Block style={styles.history}>
+                  <Text size={14} style={{ paddingBottom: 14 }} bold>{product.history}</Text>
+                </Block>
+                <Block style={{backgroundColor: "lightgrey"}}>
+                  <Text center>Visitor Experience</Text>
+                </Block>
+                <Block>
+                  <Text size={14} Muted>{product.visitorExperience}</Text>
                 </Block>
               </Block>
             </ScrollView>
@@ -150,6 +163,9 @@ export default class Product extends React.Component {
 }
 
 const styles = StyleSheet.create({
+  history: {
+    color: "red"
+  },
   product: {
     marginTop: Platform.OS === 'android' ? -HeaderHeight : 0,
   },

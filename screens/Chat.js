@@ -60,7 +60,7 @@ export default class Chat extends React.Component {
     setTimeout(() => {
         this.messagesScroll.current.scrollToOffset({ offset: this.state.height });
     }, 1);
-    
+
   }
 
   onContentSizeChange = (width,height) => {
@@ -87,7 +87,7 @@ export default class Chat extends React.Component {
                 start={{ x: 0, y: 0 }}
                 end={{ x: 1, y: 0 }}
                 colors={['#6C24AA', '#AC2688']}
-                style={[styles.messageCard, styles.shadow]}>              
+                style={[styles.messageCard, styles.shadow]}>
                 <Text color={theme.COLORS.WHITE}>{msg.message}</Text>
               </LinearGradient>
             }
@@ -136,7 +136,7 @@ export default class Chat extends React.Component {
 
   messageForm = () => {
     const { navigation } = this.props;
-    
+
     return (
       <View style={styles.messageFormContainer}>
         <Block flex row middle space="between" >
@@ -188,13 +188,13 @@ export default class Chat extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    
+
   },
   messageFormContainer: {
     height: 96,
     paddingHorizontal: 16,
     paddingTop: 16,
-    paddingBottom: 32,    
+    paddingBottom: 32,
   },
   input: {
     width: width * 0.78,

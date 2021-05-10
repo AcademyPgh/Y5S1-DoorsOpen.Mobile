@@ -51,7 +51,7 @@ export default class Gallery extends React.Component {
             outputRange: [0.5, 1, 0.5],
             extrapolate: 'clamp'
           });
-          
+
           const width = position.interpolate({
             inputRange: [i - 1, i, i + 1],
             outputRange: [8, 18, 8],
