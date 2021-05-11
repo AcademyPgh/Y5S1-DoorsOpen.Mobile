@@ -2,8 +2,7 @@ import React from 'react';
 import { withNavigation } from '@react-navigation/compat';
 import { StyleSheet, Dimensions, Image, TouchableWithoutFeedback } from 'react-native';
 import { Block, Text, theme } from 'galio-framework';
-import Icon from 'react-native-vector-icons/FontAwesome5';
-import Iconfeather from 'react-native-vector-icons/Feather';
+import IconMaterial from 'react-native-vector-icons/MaterialIcons';
 
 const { width } = Dimensions.get('screen');
 
@@ -11,38 +10,48 @@ class Product extends React.Component {
   getBathroomIcon(canPee) {
     if (canPee){
       return (
-        <Icon name={"toilet-paper"} size={25} color="#2bb8b4" />
+        <IconMaterial name={"wc"} size={25} color="#2bb8b4" />
       )
     }
     else {
       return (
-        <Icon name={"toilet-paper-slash"} size={25} color="#2bb8b4" />
+        <IconMaterial name={"do-not-disturb"} size={25} color="#d45330" />
       )
     }
   }
   wheelchairBathroom(isOpen) {
     if (isOpen){
       return (
-        <Icon name={"wheelchair"} size={25} color="#d45330" />
+        <IconMaterial name={"accessible"} size={25} color="#2bb8b4" />
+      )
+    } 
+    else {
+      return (
+        <IconMaterial name={"not-accessible"} size={25} color="#d45330" />
       )
     }
   }
   wheelchairGrounds(canAccess) {
     if (canAccess) {
       return (
-        <Icon name={"exclamation-triangle"} size={25} color="black" />
+        <IconMaterial name={"accessible"} size={25} color="#2bb8b4" />
+      )
+    }
+    else {
+      return (
+        <IconMaterial name={"not-accessible"} size={25} color="#d45330" />
       )
     }
   }
   photography(canClick) {
     if (canClick) {
       return (
-        <Iconfeather name={"camera"} size={25} color="#D78FF7" />
+        <IconMaterial name={"local-see"} size={25} color="#2bb8b4" />
       )
     }
     else {
       return (
-        <Iconfeather name={"camera-off"} size={25} color="#D78FF7" />
+        <IconMaterial name={"no-photography"} size={25} color="#d45330" />
       )
     }
   }

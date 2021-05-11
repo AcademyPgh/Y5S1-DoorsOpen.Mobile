@@ -12,7 +12,7 @@ import {
 // import Animated from 'react-native-reanimated';
 import { Block, Text, Button, theme } from 'galio-framework';
 import Icon from 'react-native-vector-icons/FontAwesome5';
-import Iconfeather from 'react-native-vector-icons/Feather';
+import IconMaterial from 'react-native-vector-icons/MaterialIcons';
 import materialTheme from '../constants/Theme';
 import Images from "../constants/Images";
 import { iPhoneX, HeaderHeight } from "../constants/utils";
@@ -113,38 +113,48 @@ export default class Product extends React.Component {
   getBathroomIcon(canPee) {
     if (canPee){
       return (
-        <Text size={14}><Icon name={"toilet-paper"} size={25} color="#2bb8b4" /> Restrooms Available</Text>
+        <Text size={14}><IconMaterial name={"wc"} size={25} color="#2bb8b4" /> Restrooms Available</Text>
       )
     }
     else {
       return (
-        <Text size={14}><Icon name={"toilet-paper-slash"} size={25} color="#2bb8b4" /> Restrooms Not Available</Text>
+        <Text size={14}><IconMaterial name={"do-not-disturb"} size={25} color="#d45330" /> Restrooms Not Available</Text>
       )
     }
   }
   wheelchairBathroom(isOpen) {
     if (isOpen){
       return (
-        <Text size={14}><Icon name={"wheelchair"} size={25} color="#d45330" /> Wheelchair Accessible Bathrooms</Text>
+        <Text size={14}><IconMaterial name={"accessible"} size={25} color="#2bb8b4" /> Wheelchair Accessible Bathrooms</Text>
+      )
+    } 
+    else {
+      return (
+        <Text size={14}><IconMaterial name={"not-accessible"} size={25} color="#d45330" /> No Wheelchair Accessible Bathrooms</Text>
       )
     }
   }
   wheelchairGrounds(canAccess) {
     if (canAccess) {
       return (
-        <Text size={14}><Icon name={"exclamation-triangle"} size={25} color="black" /> Grounds are Wheelchair Accessible</Text>
+        <Text size={14}><IconMaterial name={"accessible"} size={25} color="#2bb8b4" /> Grounds are Wheelchair Accessible</Text>
+      )
+    } 
+    else {
+      return (
+        <Text size={14}><IconMaterial name={"not-accessible"} size={25} color="#d45330" /> Grounds are Not Wheelchair Accessible</Text>
       )
     }
   }
   photography(canClick) {
     if (canClick) {
       return (
-        <Text size={14}><Iconfeather name={"camera"} size={25} color="#D78FF7" /> Photography is Allowed</Text>
+        <Text size={14}><IconMaterial name={"local-see"} size={25} color="#2bb8b4" /> Photography is Allowed</Text>
       )
     }
     else {
       return (
-        <Text size={14}><Iconfeather name={"camera-off"} size={25} color="#D78FF7" /> Photography is Not Allowed</Text>
+        <Text size={14}><IconMaterial name={"no-photography"} size={25} color="#d45330" /> Photography is Not Allowed</Text>
       )
     }
   }
@@ -166,7 +176,7 @@ export default class Product extends React.Component {
           <Block flex style={styles.options}>
             <ScrollView vertical={true} showsVerticalScrollIndicator={false}>
               <Block style={{ paddingHorizontal: theme.SIZES.BASE, paddingTop: theme.SIZES.BASE * 2 }}>
-                <Text style={{
+                <Text bold style={{
                   paddingBottom: 14,
                   fontSize: 28,
                   color: "#2bb8b4"}}>{product.title}</Text>

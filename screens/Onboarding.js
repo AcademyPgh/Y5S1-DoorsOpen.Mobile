@@ -13,7 +13,7 @@ export default class Onboarding extends React.Component {
   render() {
     const image = (
       <Image
-        width={Dimensions.get('window').width}
+        width={Dimensions.get('window').width / 2}
         source={require('./cormac_logo.png')}
         style={styles.logo} />
     );
