@@ -113,12 +113,38 @@ export default class Product extends React.Component {
   getBathroomIcon(canPee) {
     if (canPee){
       return (
-        <Text size={14}><Icon name={"toilet-paper"} size={30} color="#f0f" /> Restrooms Available</Text>
+        <Text size={14}><Icon name={"toilet-paper"} size={25} color="#2bb8b4" /> Restrooms Available</Text>
       )
     }
     else {
       return (
-        <Text size={14}><Icon name={"toilet-paper-slash"} size={30} color="#f0f" /> Restrooms Not Available</Text>
+        <Text size={14}><Icon name={"toilet-paper-slash"} size={25} color="#2bb8b4" /> Restrooms Not Available</Text>
+      )
+    }
+  }
+  wheelchairBathroom(isOpen) {
+    if (isOpen){
+      return (
+        <Text size={14}><Icon name={"wheelchair"} size={25} color="#d45330" /> Wheelchair Accessible Bathrooms</Text>
+      )
+    }
+  }
+  wheelchairGrounds(canAccess) {
+    if (canAccess) {
+      return (
+        <Text size={14}><Icon name={"exclamation-triangle"} size={25} color="black" /> Grounds are Wheelchair Accessible</Text>
+      )
+    }
+  }
+  photography(canClick) {
+    if (canClick) {
+      return (
+        <Text size={14}><Iconfeather name={"camera"} size={25} color="#D78FF7" /> Photography is Allowed</Text>
+      )
+    }
+    else {
+      return (
+        <Text size={14}><Iconfeather name={"camera-off"} size={25} color="#D78FF7" /> Photography is Not Allowed</Text>
       )
     }
   }
@@ -140,25 +166,43 @@ export default class Product extends React.Component {
           <Block flex style={styles.options}>
             <ScrollView vertical={true} showsVerticalScrollIndicator={false}>
               <Block style={{ paddingHorizontal: theme.SIZES.BASE, paddingTop: theme.SIZES.BASE * 2 }}>
-                <Text size={28} style={{ paddingBottom: 14 }}>{product.title}</Text>
-                <Text size={20} style={{ paddingBottom: 7 }}>{product.add}</Text>
+                <Text style={{
+                  paddingBottom: 14,
+                  fontSize: 28,
+                  color: "#2bb8b4"}}>{product.title}</Text>
+                <Text style={{
+                  paddingBottom: 7,
+                  fontSize: 20,
+                  color: "#d45330"}}>{product.add}</Text>
                 <Block row>
-                  <Text size={14} bold>{product.start} - </Text>
-                  <Text size={14} bold>{product.close}</Text>
+                  <Text bold style={{
+                    marginTop: 10,
+                    fontSize: 14}}>{product.start} - </Text>
+                  <Text bold style={{
+                    marginTop: 10,
+                    fontSize: 14}}>{product.close}</Text>
                 </Block>
                 <Block row>
-                  <Text size={14} bold>Capacity: </Text>
-                  <Text size={14}>{product.capacity}</Text>
+                  <Text bold style={{
+                    marginTop: 10,
+                    fontSize: 14}}>Capacity: </Text>
+                  <Text style={{
+                    marginTop: 10,
+                    fontSize: 14}}>{product.capacity}</Text>
                 </Block>
-                <Block>
-
+                <Block style={{
+                  marginBottom: 10,
+                  marginTop: 10}}>
+                {/* text */}
                   {this.getBathroomIcon(product.restroom)}
-
-                  <Text size={14}><Icon name="wheelchair" size={30} color="#f0f" />{product.restroomAccess}</Text>
-                  <Text size={14}><Icon name="wheelchair" size={30} color="#f0f" /> {product.wheelAccess}</Text>
-                  <Text size={14} style={{ paddingBottom: 20 }}><Iconfeather name="camera-off" size={30} color="#f0f" /> {product.photo}</Text>
+                  {this.wheelchairBathroom(product.restroomAccess)}
+                  {this.wheelchairGrounds(product.wheelAccess)}
+                  {this.photography(product.photo)}
                 </Block>
-                <Block style={{backgroundColor: "lightgrey"}}>
+                <Block style={{
+                  backgroundColor: "lightgrey",
+                  marginBottom: 10,
+                  marginTop: 20}}>
                   <Text center>History</Text>
                 </Block>
                 <Block style={styles.history}>
@@ -180,7 +224,19 @@ export default class Product extends React.Component {
 
 const styles = StyleSheet.create({
   history: {
-    color: "red"
+    padding: 10,
+    borderTopColor: "red",
+    borderRightColor: "red",
+    borderBottomColor: "red",
+    borderLeftColor: "red",
+    borderTopWidth: 2,
+    borderRightWidth: 2,
+    borderBottomWidth: 2,
+    borderLeftWidth: 2,
+    borderTopLeftRadius: 25,
+    borderTopRightRadius: 25,
+    borderBottomRightRadius: 25,
+    borderBottomLeftRadius: 25
   },
   product: {
     marginTop: Platform.OS === 'android' ? -HeaderHeight : 0,

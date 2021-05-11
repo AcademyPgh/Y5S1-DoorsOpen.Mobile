@@ -47,7 +47,7 @@ export default class Onboarding extends React.Component {
 
 const styles = StyleSheet.create({
   logo: {
-    marginTop: 150
+    marginTop: 150,
   },
   container: {
     backgroundColor: "white",
