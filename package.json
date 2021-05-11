@@ -36,6 +36,7 @@
     "react-native-modal-dropdown": "git+https://github.com/siemiatj/react-native-modal-dropdown.git",
     "react-native-reanimated": "~1.13.0",
     "react-native-safe-area-context": "3.1.9",
+    "react-native-scalable-image": "^1.1.0",
     "react-native-screens": "~2.15.2",
     "react-native-unimodules": "~0.12.0",
     "react-native-vector-icons": "^8.1.0",

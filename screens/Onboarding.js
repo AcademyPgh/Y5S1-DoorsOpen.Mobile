@@ -1,5 +1,6 @@
 import React from 'react';
-import { ImageBackground, Image, StyleSheet, StatusBar, Dimensions } from 'react-native';
+import { ImageBackground, StyleSheet, StatusBar, Dimensions } from 'react-native';
+import Image from 'react-native-scalable-image';
 import { Block, Button, Text, theme } from 'galio-framework';
 import { LinearGradient } from 'expo-linear-gradient';
 
@@ -10,12 +11,18 @@ import Images from '../constants/Images';
 
 export default class Onboarding extends React.Component {
   render() {
+    const image = (
+      <Image
+        width={Dimensions.get('window').width}
+        source={require('./cormac_logo.png')}
+        style={styles.logo} />
+    );
     const { navigation } = this.props;
 
     return (
       <Block center flex style={styles.container}>
         <StatusBar barStyle="light-content" />
-          <Image source={require('./DOP-Header-Logo.png')} style={styles.logo} />
+          {image}
           <Block flex={1.3} space="between" style={styles.padded}>
             <Block style={{ paddingTop: 50, position: 'relative' }}>
 
