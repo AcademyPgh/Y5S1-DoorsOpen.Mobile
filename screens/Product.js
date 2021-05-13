@@ -223,19 +223,33 @@ export default class Product extends React.Component {
                   <Block style={{
                     backgroundColor: "lightgrey",
                     marginBottom: 10,
-                    marginTop: 20}}>
-                    <Text center>History</Text>
+                    marginTop: 20,
+                    padding: 10}}>
+                    <Text size={18} bold center>History</Text>
                   </Block>
                   </DropShadow>
-                  <Block style={styles.shadow}>
+                  <Block style={styles.history}>
                     <Text size={14} style={{ paddingBottom: 14 }} bold>{product.history}</Text>
                   </Block>
-                
-                <Block style={{backgroundColor: "lightgrey"}}>
-                  <Text center>Visitor Experience</Text>
+                  <DropShadow 
+                  style={{
+                    shadowColor: "#000",
+                      shadowOffset: {
+                        width: 0,
+                        height: 1,
+                      },
+                      shadowOpacity: 1,
+                      shadowRadius: 5,
+                  }} >
+                <Block style={{
+                  backgroundColor: "lightgrey",
+                  marginBottom: 20,
+                  padding: 10,}}>
+                  <Text size={18} bold center>Visitor Experience</Text>
                 </Block>
-                <Block>
-                  <Text size={14} Muted>{product.visitorExperience}</Text>
+                </DropShadow>
+                <Block style={styles.history}>
+                  <Text size={14} style={{marginBottom: 20}} Muted>{product.visitorExperience}</Text>
                 </Block>
               </Block>
             </ScrollView>
@@ -264,13 +278,12 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
 
-  // shadow: {
-  //   shadowColor: '#000',
-  //   shadowOffset: { width: 0, height: 5 },
-  //   shadowOpacity: 0.3,
-  //   shadowRadius: 5,  
-  //   elevation: 2,
-  // },
+  radius: {
+    borderTopLeftRadius: 25,
+    borderTopRightRadius: 25,
+    borderBottomRightRadius: 25,
+    borderBottomLeftRadius: 25,
+  },
   product: {
     marginTop: Platform.OS === 'android' ? -HeaderHeight : 0,
   },
