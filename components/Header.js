@@ -36,10 +36,10 @@ class Header extends React.Component {
     // const { options } = scene.descriptor;
     // const routeName = options.headerTitle; // wip
 
-    // if (title ===  'Title') {
-    //   return ([
-    //   ]);
-    // }
+    if (title ===  'Title') {
+      return ([
+      ]);
+    }
   }
 
   renderBanner = () => {
@@ -49,7 +49,7 @@ class Header extends React.Component {
       <Image
         width={Dimensions.get('window').width * 0.8}
         source={require('./DOP-Header-Logo.png')}
-        style={styles.logo} />
+        margin={0} />
     )
   }
 
@@ -91,7 +91,7 @@ class Header extends React.Component {
       <Block style={headerStyles}>
         <NavBar
           back={back}
-          title={title}
+          title=""
           style={styles.navbar}
           transparent={transparent}
           right={this.renderRight()}
@@ -127,7 +127,7 @@ const styles = StyleSheet.create({
   navbar: {
     paddingVertical: 0,
     paddingBottom: theme.SIZES.BASE * 1.5,
-    paddingTop: iPhoneX ? theme.SIZES.BASE * 4 : theme.SIZES.BASE,
+    paddingTop: iPhoneX ? theme.SIZES.BASE * 2 : theme.SIZES.BASE,
     zIndex: 5,
   },
   shadow: {
