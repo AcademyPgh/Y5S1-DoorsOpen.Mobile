@@ -24,7 +24,7 @@ class Product extends React.Component {
       return (
         <IconMaterial name={"accessible"} size={25} color="#2bb8b4" />
       )
-    } 
+    }
     else {
       return (
         <IconMaterial name={"not-accessible"} size={25} color="#d45330" />
@@ -65,19 +65,19 @@ class Product extends React.Component {
       <Block row={horizontal} card flex style={[styles.product, styles.shadow, style]}>
         <TouchableWithoutFeedback onPress={() => navigation.navigate('Product', { product: product })}>
           <Block flex style={[styles.imageContainer, styles.shadow]}>
-            <Image source={{ uri: product.image }} style={imageStyles} />
+            <Image source={{ uri: product.imageURL }} style={imageStyles} />
           </Block>
         </TouchableWithoutFeedback>
         <TouchableWithoutFeedback onPress={() => navigation.navigate('Product', { product: product })}>
           <Block flex space="between" style={styles.productDescription}>
-            <Text size={22} style={styles.productTitle}>{product.title}</Text>
+            <Text size={22} style={styles.productTitle}>{product.building}</Text>
             <Block row space="between">
-              <Text size={12} color={priceColor}>{product.add}</Text>
+              <Text size={12} color={priceColor}>{product.address1}</Text>
               <Block row>
-                {this.getBathroomIcon(product.restroom)}
-                {this.wheelchairBathroom(product.restroomAccess)}
-                {this.wheelchairGrounds(product.wheelAccess)}
-                {this.photography(product.photo)}
+                {this.getBathroomIcon(product.restroomsAvailable)}
+                {this.wheelchairBathroom(product.wheelchairAccessibleRestroom)}
+                {this.wheelchairGrounds(product.wheelchairAccessible)}
+                {this.photography(product.photographyAllowed)}
               </Block>
             </Block>
           </Block>

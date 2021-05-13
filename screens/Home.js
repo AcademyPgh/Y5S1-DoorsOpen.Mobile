@@ -8,6 +8,26 @@ const { width } = Dimensions.get('screen');
 import homeImages from '../constants/images/home';
 
 export default class Home extends React.Component {
+  constructor(props){
+    super(props);
+
+      this.state={
+        buildings: []
+      }
+  }
+  componentDidMount() {
+    // Loads the state from the backend
+    fetch("https://doors-open.azurewebsites.net/api/values")
+    .then(response=>response.json())
+    .then(data=>{
+      console.log(data);
+      this.setState({
+        buildings: data
+      });
+    });
+  }
+
+
   renderSearch = () => {
     const { navigation } = this.props;
     const iconContent = <Icon size={16} color={theme.COLORS.MUTED} name="zoom-in" family="material" />
@@ -47,9 +67,9 @@ export default class Home extends React.Component {
 
   renderProducts = () => {
     const cars = [];
-    for (let i = 0; i < homeImages.length; i++){
+    for (let i = 0; i < this.state.buildings.length; i++){
       cars.push(
-        <Product key={i} product={homeImages[i]} full />
+        <Product key={i} product={this.state.buildings[i]} full />
       )
     }
 

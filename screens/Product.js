@@ -32,7 +32,7 @@ export default class Product extends React.Component {
     // const { params } = navigation && navigation.state;
     const product = route.params?.product;
     // const product = params.product;
-    const productImages = [product.image, product.image, product.image, product.image];
+    const productImages = [product.imageURL];
 
     return (
       <ScrollView
@@ -128,7 +128,7 @@ export default class Product extends React.Component {
       return (
         <Text size={14}><IconMaterial name={"accessible"} size={25} color="#2bb8b4" /> Wheelchair Accessible Bathrooms</Text>
       )
-    } 
+    }
     else {
       return (
         <Text size={14}><IconMaterial name={"not-accessible"} size={25} color="#d45330" /> No Wheelchair Accessible Bathrooms</Text>
@@ -140,7 +140,7 @@ export default class Product extends React.Component {
       return (
         <Text size={14}><IconMaterial name={"accessible"} size={25} color="#2bb8b4" /> Grounds are Wheelchair Accessible</Text>
       )
-    } 
+    }
     else {
       return (
         <Text size={14}><IconMaterial name={"not-accessible"} size={25} color="#d45330" /> Grounds are Not Wheelchair Accessible</Text>
@@ -180,18 +180,18 @@ export default class Product extends React.Component {
                 <Text bold style={{
                   paddingBottom: 14,
                   fontSize: 28,
-                  color: "#2bb8b4"}}>{product.title}</Text>
+                  color: "#2bb8b4"}}>{product.building}</Text>
                 <Text style={{
                   paddingBottom: 7,
                   fontSize: 20,
-                  color: "#d45330"}}>{product.add}</Text>
+                  color: "#d45330"}}>{product.fullAddress}</Text>
                 <Block row>
                   <Text bold style={{
                     marginTop: 10,
-                    fontSize: 14}}>{product.start} - </Text>
+                    fontSize: 14}}>{product.startTime} - </Text>
                   <Text bold style={{
                     marginTop: 10,
-                    fontSize: 14}}>{product.close}</Text>
+                    fontSize: 14}}>{product.endTime}</Text>
                 </Block>
                 <Block row>
                   <Text bold style={{
@@ -205,12 +205,12 @@ export default class Product extends React.Component {
                   marginBottom: 10,
                   marginTop: 10}}>
                 {/* text */}
-                  {this.getBathroomIcon(product.restroom)}
-                  {this.wheelchairBathroom(product.restroomAccess)}
-                  {this.wheelchairGrounds(product.wheelAccess)}
-                  {this.photography(product.photo)}
+                  {this.getBathroomIcon(product.restroomsAvailable)}
+                  {this.wheelchairBathroom(product.wheelchairAccessibleRestroom)}
+                  {this.wheelchairGrounds(product.wheelchairAccessible)}
+                  {this.photography(product.photographyAllowed)}
                 </Block>
-                <DropShadow 
+                <DropShadow
                   style={{
                     shadowColor: "#000",
                       shadowOffset: {
@@ -229,9 +229,9 @@ export default class Product extends React.Component {
                   </Block>
                   </DropShadow>
                   <Block style={styles.history}>
-                    <Text size={14} style={{ paddingBottom: 14 }} bold>{product.history}</Text>
+                    <Text size={14} style={{ paddingBottom: 14 }} bold>{product.historicalOverview}</Text>
                   </Block>
-                  <DropShadow 
+                  <DropShadow
                   style={{
                     shadowColor: "#000",
                       shadowOffset: {
@@ -262,7 +262,7 @@ export default class Product extends React.Component {
 const styles = StyleSheet.create({
   history: {
     padding: 10,
-    paddingBottom: 5,    
+    paddingBottom: 5,
     borderTopColor: "white",
     borderRightColor: "white",
     borderBottomColor: "white",
