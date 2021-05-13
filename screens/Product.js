@@ -16,6 +16,7 @@ import IconMaterial from 'react-native-vector-icons/MaterialIcons';
 import materialTheme from '../constants/Theme';
 import Images from "../constants/Images";
 import { iPhoneX, HeaderHeight } from "../constants/utils";
+import DropShadow from "react-native-drop-shadow";
 
 const { height, width } = Dimensions.get('window');
 
@@ -209,15 +210,27 @@ export default class Product extends React.Component {
                   {this.wheelchairGrounds(product.wheelAccess)}
                   {this.photography(product.photo)}
                 </Block>
-                <Block style={{
-                  backgroundColor: "lightgrey",
-                  marginBottom: 10,
-                  marginTop: 20}}>
-                  <Text center>History</Text>
-                </Block>
-                <Block style={styles.history}>
-                  <Text size={14} style={{ paddingBottom: 14 }} bold>{product.history}</Text>
-                </Block>
+                <DropShadow 
+                  style={{
+                    shadowColor: "#000",
+                      shadowOffset: {
+                        width: 0,
+                        height: 1,
+                      },
+                      shadowOpacity: 1,
+                      shadowRadius: 5,
+                  }} >
+                  <Block style={{
+                    backgroundColor: "lightgrey",
+                    marginBottom: 10,
+                    marginTop: 20}}>
+                    <Text center>History</Text>
+                  </Block>
+                  </DropShadow>
+                  <Block style={styles.shadow}>
+                    <Text size={14} style={{ paddingBottom: 14 }} bold>{product.history}</Text>
+                  </Block>
+                
                 <Block style={{backgroundColor: "lightgrey"}}>
                   <Text center>Visitor Experience</Text>
                 </Block>
@@ -235,10 +248,11 @@ export default class Product extends React.Component {
 const styles = StyleSheet.create({
   history: {
     padding: 10,
-    borderTopColor: "red",
-    borderRightColor: "red",
-    borderBottomColor: "red",
-    borderLeftColor: "red",
+    paddingBottom: 5,    
+    borderTopColor: "white",
+    borderRightColor: "white",
+    borderBottomColor: "white",
+    borderLeftColor: "white",
     borderTopWidth: 2,
     borderRightWidth: 2,
     borderBottomWidth: 2,
@@ -246,8 +260,17 @@ const styles = StyleSheet.create({
     borderTopLeftRadius: 25,
     borderTopRightRadius: 25,
     borderBottomRightRadius: 25,
-    borderBottomLeftRadius: 25
+    borderBottomLeftRadius: 25,
+    marginBottom: 10,
   },
+
+  // shadow: {
+  //   shadowColor: '#000',
+  //   shadowOffset: { width: 0, height: 5 },
+  //   shadowOpacity: 0.3,
+  //   shadowRadius: 5,  
+  //   elevation: 2,
+  // },
   product: {
     marginTop: Platform.OS === 'android' ? -HeaderHeight : 0,
   },

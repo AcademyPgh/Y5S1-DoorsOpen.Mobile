@@ -31,6 +31,7 @@
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-native": "~0.63.4",
+    "react-native-drop-shadow": "^0.0.2",
     "react-native-dropdown-picker": "^3.7.0",
     "react-native-gesture-handler": "~1.8.0",
     "react-native-modal-dropdown": "git+https://github.com/siemiatj/react-native-modal-dropdown.git",
