@@ -6,7 +6,7 @@ const home = [
     close: '4pm',
     capacity: 20,
     restroom: false,
-    restroomAccess: true,
+    restroomAccess: false,
     wheelAccess: true,
     photo: false,
     history: "One of the most frequently asked questions is how to pronounce the name of the building it is Bost (boa-st), sounds like ghost. Over the years, this storied building has served many functions. It was a hotel, bar, gambling hall, brothel, and even a sandwich shop. Built in 1892 as a hotel for the rapidly growing worker's ward of Homestead, the Bost Building was at the center of American labor history's most dramatic episodes--the Homestead Lockout and Strike. During the summer of 1892, the Bost Building served as headquarters for the Amalgamated Association of Iron and Steel Workers. Using the third floor of the building as a watchtower, steel union officials monitored activities in the mill. The building received a National Historic Landmark designation in 1999 and underwent a $4-million renovation. It is now Rivers of Steel's gift shop and museum.",

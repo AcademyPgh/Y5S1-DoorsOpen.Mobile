@@ -2,6 +2,7 @@ import React from 'react';
 import { withNavigation } from '@react-navigation/compat';
 import { TouchableOpacity, StyleSheet, Platform, Dimensions, Keyboard } from 'react-native';
 import { Button, Block, NavBar, Input, Text, theme } from 'galio-framework';
+import Image from 'react-native-scalable-image';
 
 import Icon from './Icon';
 import materialTheme from '../constants/Theme';
@@ -35,16 +36,20 @@ class Header extends React.Component {
     // const { options } = scene.descriptor;
     // const routeName = options.headerTitle; // wip
 
-    if (title ===  'Title') {
-      return ([
-      ]);
-    }
+    // if (title ===  'Title') {
+    //   return ([
+    //   ]);
+    // }
   }
 
   renderBanner = () => {
     const { navigation } = this.props;
     return (
-      <Text center size={50}>Doors Open Pittsburgh</Text>
+      // <Text center size={50}>Doors Open Pittsburgh</Text>
+      <Image
+        width={Dimensions.get('window').width * 0.8}
+        source={require('./DOP-Header-Logo.png')}
+        style={styles.logo} />
     )
   }
 
@@ -60,7 +65,7 @@ class Header extends React.Component {
   }
 
   renderHeader = () => {
-    const { search } = this.props;
+    const { search } = this.props
     if (search) {
       return (
         <Block center>

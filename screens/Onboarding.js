@@ -13,7 +13,7 @@ export default class Onboarding extends React.Component {
   render() {
     const image = (
       <Image
-        width={Dimensions.get('window').width / 2}
+        width={Dimensions.get('window').width / 3}
         source={require('./cormac_logo.png')}
         style={styles.logo} />
     );
@@ -24,9 +24,9 @@ export default class Onboarding extends React.Component {
         <StatusBar barStyle="light-content" />
           {image}
           <Block flex={1.3} space="between" style={styles.padded}>
-            <Block style={{ paddingTop: 50, position: 'relative' }}>
+            <Block style={{ paddingTop: 30, position: 'relative' }}>
 
-              <Block style={{ marginBottom: theme.SIZES.BASE * 4, paddingHorizontal: theme.SIZES.BASE * 2, zIndex: 3 }}>
+              <Block style={{ marginBottom: theme.SIZES.BASE * 2, paddingHorizontal: theme.SIZES.BASE * 2, zIndex: 3 }}>
                 <Block>
                   <Text center color="#2bb8b4" size={60}>Doors Open Pittsburgh</Text>
                 </Block>
